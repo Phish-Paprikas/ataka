@@ -35,5 +35,33 @@ class FlagStatus(str, enum.Enum):
     # submission system told us it is invalid
     INVALID = 'invalid'
 
-DuplicatesDontResubmitFlagStatus = {FlagStatus.OK, FlagStatus.QUEUED, FlagStatus.PENDING, FlagStatus.DUPLICATE,
-                                    FlagStatus.NOP, FlagStatus.OWNFLAG, FlagStatus.INACTIVE, FlagStatus.INVALID}
+    CONTEST_OVER = 'Game is not running / Contest is over'
+    SUBMISSION_NOT_APPROVED = 'Submission not approved'
+    MEMBERSHIP_NOT_APPROVED = 'Membership not approved'
+    BREAK_TIME = 'Break time'
+    INVALID_FORMAT = 'Invalid flag format'
+    FLAG_NOT_FOUND = 'Flag not found for this contest.'
+    OWN_FLAG = 'You cannot submit your own flag.'
+    FLAG_FROM_FUTURE = 'Flag is from the future.'
+    FLAG_TOO_OLD = 'Flag is too old'
+    FLAG_ALREADY_SUBMITTED = 'Flag already submitted.'
+    NOP_TEAM = 'You are not allowed to submit flags from NOP teams'
+    GENERIC_ERROR = 'Generic error'
+
+DuplicatesDontResubmitFlagStatus = {
+    FlagStatus.OK,
+    FlagStatus.QUEUED,
+    FlagStatus.PENDING,
+    FlagStatus.DUPLICATE,
+    FlagStatus.NOP, 
+    FlagStatus.OWNFLAG,
+    FlagStatus.INACTIVE,
+    FlagStatus.INVALID,
+    
+    FlagStatus.INVALID_FORMAT,
+    FlagStatus.FLAG_NOT_FOUND,
+    FlagStatus.OWN_FLAG,
+    FlagStatus.FLAG_TOO_OLD,
+    FlagStatus.FLAG_ALREADY_SUBMITTED,
+    FlagStatus.NOP_TEAM,
+}
