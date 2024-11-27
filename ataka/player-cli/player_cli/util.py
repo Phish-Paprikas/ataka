@@ -80,7 +80,7 @@ def request(method, endpoint, data=None, params=None):
     if response.status_code != 200:
         print(f"{ERROR_STR}: " + escape(f"{method} {endpoint} returned status code {response.status_code} {response.reason}"))
         try:
-            print(f"{ERROR_STR}: " + escape(response.json()))
+            print(f"{ERROR_STR}: " + escape(str(response.json())))
         except JSONDecodeError:
             print(f"{ERROR_STR}: " + escape(response.text))
         raise typer.Exit(code=1)
