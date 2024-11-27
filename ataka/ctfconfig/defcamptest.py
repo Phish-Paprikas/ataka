@@ -37,7 +37,7 @@ def get_targets():
     targets = {
         'test_service': [
             {
-                "ip": '127.0.0.)1',
+                "ip": '127.0.0.1',
                 "extra": '["5000"]',   
             }
         ]
